@@ -20,7 +20,7 @@ app.set('view engine', 'ejs')
 app.set('views', './views')
 
 // Gebruik de map 'public' voor statische resources
-app.use(express.static('public'))
+app.use('/static', express.static('public'))
 
 // Maak een route voor de index
 app.get('/', (req, res) => {
