@@ -1,14 +1,11 @@
 <%- include('./partials/head') %>
 
+
 <h1><%= squad.name %></h1>
 
-<a href="/?squad=squad-a-2022">Squad A</a>
-<a href="/?squad=squad-b-2022">Squad B</a>
-<a href="/?squad=squat-c-2022">Squad C</a>
-
-<sectiion>
+<section class="card-filter">
   <form>
-    <label>Squad:</label>
+    <label class="filter-tag">Squad:</label>
     <input type="radio" id="squadA" name="squad" value="squad-a-2022">
     <label for="squadA"> Squad A</label>
     <input type="radio" id="squadB" name="squad" value="squad-b-2022">
@@ -20,7 +17,7 @@
     <input type="radio" id="minorweb" name="squad" value="minor-web-2023">
     <label for="minorweb"> Minor Web </label>
 
-    <label>Role:</label>
+    <label class="filter-tag">Role:</label>
     <input type="radio" id="student" name="role" value="student">
     <label for="student"> Student</label>
     <input type="radio" id="lecturer" name="role" value="lecturer">
@@ -28,7 +25,7 @@
     <input type="radio" id="co-teacher" name="role" value="co-teacher">
     <label for="co-teacher"> Co-teacher</label>
 
-    <label for="sort-select">Sort by:</label>
+    <label for="sort-select" class="filter-tag">Sort by:</label>
 
     <select name="orderBy" id="sort-select">
       <option value="name-AZ">Name A-Z</option>
@@ -43,20 +40,21 @@
 
     <input type="submit" value="submit">
   </form>
-</sectiion>
+</section>
 
-<section>
+<section class="card-area">
   <!-- Hier komen de members -->
   <% squad.members.forEach(member => { %>
-  <article>
+  <article class="card-container">
+    <div class="card-sizer"></div>
     <% if (member.avatar) { %>
     <img src="<%= member.avatar %>" alt="De avatar van <%= member.name %>" />
     <% }else{ %>
     <img src="https://via.placeholder.com/300" alt="Placeholder avatar" />
     <% } %>
     <h2><%= member.name %> <%= member.prefix %> <%= member.surname %></h2>
-    <p> <%= member.role[0] %> </p>
-    <p> <%= member.nickname %> </p>  
+    <p class="role-tag"> <%= member.role[0] %></p>
+    <p> Also known as: <p class="nick-tag"><%= member.nickname %></p></p>  
 
     <% for (const [key, value] of Object.entries(member.bio || {})) {   %>
     <p> <%- value %> </p>
@@ -68,7 +66,6 @@
 </section>
 
 
-<button class="sortTest">Sort</button>
 
 <%- include('./partials/foot') %>
 

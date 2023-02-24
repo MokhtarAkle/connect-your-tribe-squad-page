@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Press+Start+2P&display=swap');
+
+:root{
+    --color-main: rgb(233, 233, 233);
+    --bg-main: #0E0E10;
+    --color-secondary: white;
+    --bg-secondary: #18181B;
+    --font-heading: 'Press Start 2P', cursive;
+    --font-main: 'Inconsolata', monospace;
+}
+
+body{
+    background-color: var(--bg-main);
+    color: var(--color-main);
+    font-family: var(--font-main);
+}
+
+h1,h2{
+    font-family: var(--font-heading);
+}
+
+.card-sizer, .card-container{
+    width: 29%;
+}
+
+.card-container{
+    float: left;
+    box-shadow: 10px 5px 5px hsla(0, 0%, 4%, 0.5);
+    border-radius: 15% ;
+    position: relative !important;
+    margin-bottom: 1em;
+    margin-left: 1em;
+    padding: 2em;
+    background-color: var(--bg-secondary);
+    text-align: center;
+}
+
+.card-container img {
+    display: block;
+    max-width: 100%;
+    margin: auto;
+  }
+  
+  .card-area:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+
+
+.card-container:nth-of-type(4), .card-container:nth-of-type(7),.card-container:nth-of-type(8), .card-container:nth-of-type(11), .card-container:nth-of-type(5), .card-container:nth-of-type(2),.card-container:nth-of-type(14), .card-container:nth-of-type(10){
+    width: 25%;
+}
+
+.card-filter{
+    margin-bottom: 1em;
+}
+
+.card-filter input[type="submit"]{
+    background-color: var(--bg-secondary);
+    color: var(--color-main);
+    box-shadow: 10px 5px 5px hsla(0, 0%, 4%, 0.5);
+    border-radius: 15% ;
+    padding: .5em;
+}
+
+.filter-tag{
+    font-family: var(--font-heading);
+    color: var(--color-secondary);
+}
+
+.role-tag{
+    border: 1px solid white;
+    border-radius: 5%;
+    width: 5em;
+    margin: auto;
+    padding: .2em;
+}
+
+.nick-tag{
+    font-family: var(--font-heading);
+}
