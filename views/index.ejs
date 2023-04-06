@@ -53,7 +53,9 @@
     <img src="https://via.placeholder.com/300" alt="Placeholder avatar" />
     <% } %>
     <h2><%= member.name %> <%= member.prefix %> <%= member.surname %></h2>
-    <p class="role-tag"> <%= member.role[0] %></p>
+    <% for(let i = 0; i < member.role.length; i++){ %>
+    <p class="role-tag"> <%= member.role[i] %></p>
+    <% } %>
     <p> Also known as: <p class="nick-tag"><%= member.nickname %></p></p>  
 
     <% for (const [key, value] of Object.entries(member.bio || {})) {   %>

@@ -72,9 +72,10 @@ h1,h2{
 .role-tag{
     border: 1px solid white;
     border-radius: 5%;
-    width: 5em;
+    width: 6em;
     margin: auto;
     padding: .2em;
+    margin-bottom: 5px;
 }
 
 .nick-tag{
